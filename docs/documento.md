@@ -1,12 +1,12 @@
 # Documento
 
-Documento final do projeto.
+Final and latest LaTeX compilation of Hillink.
 
 <embed src="../assets/relatorio.pdf" type="application/pdf" class="pdf-viewer">
 
 ## Estrutura
 
-São 31 seções, 16 figuras, 22 tabelas e 6 equações. O documento está em inglês.
+31 sections, 16 figures, 22 tables
 
 - **Abstract**
 - **Introduction**

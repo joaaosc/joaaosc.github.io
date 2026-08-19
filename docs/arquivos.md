@@ -4,15 +4,14 @@
 
 | Categoria | Conteúdo |
 | --- | --- |
-| [Todos os arquivos](arquivos.md) | renders, modelos, análises e vídeos |
-| [Modelo em AR](assets/models/Hillink_modelo.usdz) | abre no iPhone e iPad |
+| [Modelo em AR](assets/models/Hillink_modelo.usdz) | for Apple Devices only |
 | [Modelo CAD](assets/models/Hillink.step) | STEP, 13 MB |
-| [Lista de materiais](assets/models/Hillink_BOM.csv) | BOM em CSV |
-| [Artigo completo](assets/relatorio.pdf) | PDF, 7,2 MB |
+| [Lista de materiais](assets/models/Hillink_BOM.csv) | Bill of Materials |
+| [Artigo completo](assets/relatorio.pdf) | Hillink article, 7,2 MB |
 
 ### Pranchas técnicas
 
-São 30 pranchas: 17 de CAD, 6 de FEM e 6 de análises.
+Engineering documents. 17 CAD, 6 FEM, 6 Analysis.
 
 ![Folha de contato](assets/img/00_folha_de_contato.png)
 
