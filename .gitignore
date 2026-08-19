@@ -1,0 +1,12 @@
+site/
+.cache/
+.DS_Store
+*.tar
+*.tar.gz
+
+# Material bruto de campo: pesado e nao referenciado por nenhuma pagina.
+docs/assets/enviados/*.MOV
+docs/assets/enviados/*.mov
+docs/assets/enviados/*.HEIC
+docs/assets/enviados/*.xlsx
+docs/assets/models/Hillink.obj

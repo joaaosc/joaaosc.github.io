@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <meta name="theme-color" content="#ffffff">
+{% endblock %}
+
+{# Sem cabecalho, rodape e faixa de aviso: a pagina e so a barra lateral e o
+   conteudo. Sobrescrever os blocos com vazio e mais limpo que esconder por
+   CSS -- o HTML nem chega a ser gerado. #}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block announce %}{% endblock %}
+
+{# Remove a coluna do indice: o pedido e barra lateral + conteudo, so isso. #}
+{% block site_nav %}
+  {% if nav %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

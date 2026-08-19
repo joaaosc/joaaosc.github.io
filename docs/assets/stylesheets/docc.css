@@ -1,0 +1,220 @@
+/* Hillink — barra lateral e conteúdo. Nada mais. */
+
+:root {
+  --azul:   #0071e3;
+  --texto:  #1d1d1f;
+  --suave:  #6e6e73;
+  --tenue:  #86868b;
+  --linha:  rgba(0, 0, 0, .09);
+  --fundo:  #ffffff;
+  --painel: #fbfbfd;
+
+  --md-primary-fg-color: var(--azul);
+  --md-accent-fg-color:  var(--azul);
+  --md-typeset-a-color:  var(--azul);
+  --md-default-bg-color: var(--fundo);
+  --md-code-bg-color:    #f5f5f7;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter,
+               "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -.011em;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: duas colunas fixas. Sem cabeçalho, o conteúdo começa no topo da
+   janela — por isso os deslocamentos que o Material reserva para a barra
+   superior precisam ser zerados aqui.
+   -------------------------------------------------------------------------- */
+.md-container, .md-main { padding-top: 0 !important; }
+.md-main__inner { margin-top: 0; }
+.md-grid { max-width: 100%; }
+
+.md-sidebar--secondary { display: none !important; }   /* índice da direita */
+.md-content { max-width: 52rem; }
+.md-content__inner { padding: 3.2rem 1.6rem 6rem; margin: 0; }
+.md-content__inner::before { display: none; }    /* espaçador do tema */
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15.5rem;
+    background: var(--painel);
+    border-right: 1px solid var(--linha);
+    padding: 2rem 0 1rem;
+    transform: none !important;
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap { margin: 0; height: 100%; }
+  .md-main__inner { margin-left: 15.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Navegação
+   -------------------------------------------------------------------------- */
+.md-sidebar__inner { padding: 0 .75rem; }
+.md-nav { font-size: .76rem; }
+.md-nav__title { display: none; }
+
+.md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link {
+  color: var(--tenue) !important;
+  font-size: .64rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 1.3rem .55rem .35rem;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: default;
+}
+
+.md-nav__link {
+  color: var(--suave);
+  border-radius: 7px;
+  padding: .34rem .55rem;
+  margin: 1px 0;
+  line-height: 1.45;
+  transition: background .14s, color .14s;
+}
+.md-nav__link:hover { background: rgba(0, 0, 0, .05); color: var(--texto); }
+
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  background: var(--azul);
+  color: #fff !important;
+  font-weight: 550;
+}
+
+/* --------------------------------------------------------------------------
+   Texto
+   -------------------------------------------------------------------------- */
+.md-typeset { font-size: .82rem; line-height: 1.72; }
+
+.md-typeset h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -.028em;
+  line-height: 1.12;
+  color: var(--texto);
+  margin: 0 0 .9em;
+}
+.md-typeset h2 {
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -.022em;
+  margin: 2.4em 0 .7em;
+  padding-top: .9em;
+  border-top: 1px solid var(--linha);
+}
+.md-typeset h3 { font-size: 1.05rem; font-weight: 600; margin: 1.9em 0 .5em; }
+.md-typeset h4 { font-size: .9rem;  font-weight: 600; margin: 1.5em 0 .4em; }
+
+.md-typeset a { text-decoration: none; }
+.md-typeset a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.md-typeset hr { border-bottom: 1px solid var(--linha); margin: 2.2em 0; }
+
+/* --------------------------------------------------------------------------
+   Blocos, tabelas, código
+   -------------------------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--linha);
+  border-left: 3px solid var(--azul);
+  border-radius: 10px;
+  box-shadow: none;
+  background: var(--painel);
+  font-size: .78rem;
+}
+.md-typeset .admonition-title,
+.md-typeset summary { background: transparent !important; font-weight: 600; }
+.md-typeset .warning  { border-left-color: #ff9500; }
+.md-typeset .danger   { border-left-color: #ff3b30; }
+.md-typeset .tip      { border-left-color: #34c759; }
+.md-typeset .warning > .admonition-title::before { background-color: #ff9500; }
+.md-typeset .danger  > .admonition-title::before { background-color: #ff3b30; }
+.md-typeset .tip     > .admonition-title::before { background-color: #34c759; }
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  box-shadow: none;
+  font-size: .74rem;
+  overflow: hidden;
+}
+.md-typeset table:not([class]) th {
+  background: var(--painel);
+  font-weight: 600;
+  color: var(--texto);
+  border-bottom: 1px solid var(--linha);
+}
+.md-typeset table:not([class]) td { border-top: 1px solid var(--linha); }
+
+.md-typeset code { border-radius: 5px; padding: .12em .38em; font-size: .84em; }
+.md-typeset pre > code { border-radius: 10px; padding: 1rem 1.1rem; }
+
+/* --------------------------------------------------------------------------
+   Mídia
+   -------------------------------------------------------------------------- */
+.md-typeset img:not(.emojione):not(.twemoji):not(.gemoji) {
+  border-radius: 10px;
+  border: 1px solid var(--linha);
+  max-width: 100%;
+}
+.md-typeset video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--linha);
+}
+
+/* Visualizador do PDF */
+.pdf-viewer {
+  width: 100%;
+  height: 84vh;
+  min-height: 540px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  background: var(--painel);
+}
+
+/* Apresentação: proporção de tela sem depender de wrapper */
+.md-typeset iframe.embed,
+.md-typeset iframe[src*="canva.com"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 420px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+/* Matemática não estoura a largura no celular */
+mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: .4em 0;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1.6em 0;
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  padding: 1.2rem .6rem;
+}
+
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; border-radius: 5px; }
+
+@media print {
+  .md-sidebar { display: none !important; }
+  .md-main__inner { margin-left: 0; }
+  .md-content { max-width: none; }
+  .md-typeset h2 { border-top: 0; }
+}

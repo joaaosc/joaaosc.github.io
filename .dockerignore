@@ -1,0 +1,15 @@
+.git
+site
+.cache
+*.tar
+*.tar.gz
+.DS_Store
+
+# Material bruto de campo: continua no projeto, mas fica fora da imagem que
+# vai ao ar. Sao ~290 MB que nenhuma pagina referencia -- incluir so tornaria
+# o envio ao Portainer inviavel.
+docs/assets/enviados/*.MOV
+docs/assets/enviados/*.mov
+docs/assets/enviados/*.HEIC
+docs/assets/enviados/*.xlsx
+docs/assets/models/Hillink.obj

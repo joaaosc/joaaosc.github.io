@@ -1,0 +1,10 @@
+# Stack do Portainer. Cole este conteudo no editor web ao criar a stack.
+# A imagem hillink-docs:1 precisa ter sido importada antes (Images -> Import).
+
+services:
+  hillink:
+    image: hillink-docs:1
+    container_name: hillink-docs
+    restart: unless-stopped
+    ports:
+      - "8080:8000"

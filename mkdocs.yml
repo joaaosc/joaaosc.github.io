@@ -1,0 +1,84 @@
+site_name: Hillink
+
+site_url: https://joaaosc.github.io/
+
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: pt-BR
+  custom_dir: overrides
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  palette:
+    - scheme: default
+      primary: white
+      accent: blue
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+exclude_docs: |
+  assets/enviados/*.MOV
+  assets/enviados/*.mov
+  assets/enviados/*.HEIC
+  assets/enviados/*.xlsx
+  assets/models/Hillink.obj
+
+plugins:
+  - search:
+      lang: [pt, en]
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: false
+
+extra_css:
+  - assets/stylesheets/docc.css
+
+extra_javascript:
+  - assets/javascripts/tema.js
+  - assets/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  generator: false
+
+nav:
+  - Hillink: index.md
+  - Engenharia:
+      - Visão geral: visao-geral.md
+      - Resultados: resultados.md
+      - Exemplos: exemplos.md
+      - Metodologia: metodologia.md
+  - Documento:
+      - Artigo: documento.md
+      - Apresentação: apresentacao.md
+  - Material:
+      - Arquivos: arquivos.md
+      - Vídeos: videos.md
